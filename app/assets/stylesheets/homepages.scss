@@ -1,0 +1,27 @@
+// Place all the styles related to the homepages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+  @import url('foundation.css');
+
+.imageborder{
+  border: solid 1px black;
+}
+
+.calories{
+  display: inline-block;
+}
+
+.footer{
+  bottom: 0px;
+}
+
+.index-search{
+  display: table-cell;
+  vertical-align: middle;
+  height: 50px;
+  border: 1px solid red;
+}
+
+h1{
+  text-align: center
+}

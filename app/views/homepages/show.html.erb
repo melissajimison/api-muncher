@@ -1,0 +1,49 @@
+<h1><%= @recipe.label %></h1>
+<div class="row">
+  <%= image_tag(@recipe.image, :title => @recipe.label, :alt => @recipe.label) %>
+  <div class="calories">
+    <P>Servings: <%= @recipe.servings.round(0) %></p>
+    <p>Calories per serving: <%= @recipe.calories_per_serving %></p>
+  </div>
+</div>
+
+<div><%= link_to 'Go to Original Recipe', @recipe.url, :target => '_blank', class: "button" %></div>
+
+<h3>Ingredients</h3>
+<table>
+  <tr>
+    <th>Items</th>
+    <th>Amount</th>
+  </tr>
+<% @recipe.ingredients.each do |ing| %>
+  <tr>
+    <td><%= ing["text"] %></td>
+    <td><%= "#{ing["quantity"]} #{ing["measure"]}" %></td>
+  </tr>
+<% end %>
+</table>
+
+<h3>Dietary Restrictions</h3>
+<ul>
+  <% @recipe.healthLabels.each do |ea| %>
+    <li><%= ea %></li>
+  <% end %>
+</ul>
+
+<h3>Nutrient</h3>
+<table>
+  <tr>
+    <th>Nutrient</th>
+    <th>Amount</th>
+    <th>Daily value</th>
+  </tr>
+  <% @recipe.digest.each do |ea| %>
+    <tr>
+      <td><%= ea["label"] %></td>
+      <td><%= "#{@recipe.nutrient(ea)} #{ea["unit"]}" %></td>
+      <td><%= "#{@recipe.daily_percentage(ea)}%" %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div><%= link_to 'Back', :back, class: "button" %></div>
