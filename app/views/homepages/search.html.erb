@@ -1,34 +1,43 @@
 <!-- ######## pagination ########### -->
-<ul class="pagination text-center" role="navigation" aria-label="Pagination">
-  <li class="pagination-previous disabled">Previous <span class="show-for-sr">page</span></li>
-  <li class="current"><span class="show-for-sr">You're on page</span> 0-10</li>
-  <li><a href="#" aria-label="Page 2">11-20</a></li>
-  <li><a href="#" aria-label="Page 3">21-30</a></li>
-  <li><a href="#" aria-label="Page 4">31-40</a></li>
-  <li class="ellipsis" aria-hidden="true"></li>
-  <!-- <li><a href="#" aria-label="Page 12">41-50</a></li>
-  <li><a href="#" aria-label="Page 13">51-60</a></li> -->
-  <li class="pagination-next"><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
-</ul>
 
+<ul class="pagination text-center" role="navigation" aria-label="Pagination">
+  <li class="pagination-previous">
+  <% if @page > 1 %>
+    <%= link_to "Previous", search_path(q: @query, page: @page-1) %>
+  <% end %>
+  </li>
+
+  <li class="pagination-next">
+  <% if @page < maxpage %>
+    <%= link_to "Next", search_path(q: @query, page: @page+1) %>
+  <% end %>
+  </li>
+</ul>
 <!-- ######## pagination ########### -->
 
 
-<h1>Recipes</h1>
-<div class="row small-up-1 medium-up-2 large-up-3">
+
+
+<div class="row">
+  <h1><%= "#{@query.capitalize} Recipes" %></h1>
+</div>
+
+<div class="row">
   <% @your_recipes.each do |recipe| %>
-    <div class="column imageborder">
-      <%= link_to image_tag(recipe.image, :title => recipe.label, :alt => recipe.label), show_path(recipe.uri) %>
-      <h4 class="subheader"><%= link_to recipe.label, show_path(recipe.uri) %></h4>
-    </div>
+      <li class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
+        <%= link_to image_tag(recipe.image, :title => recipe.label, :alt => recipe.label), show_path(recipe.uri) %>
+        <h5 class="subheader"><%= link_to recipe.label, show_path(recipe.uri) %></h5>
+      </li>
   <% end %>
 </div>
 
 
 
+
+
 <!-- ########## script for "back to top" button ############### -->
 <div id="back-top">
-  <a href="#"> BACK TO TOP </a>
+  <a href="#" class="button"> BACK TO TOP </a>
 </div>
 
   <script>
