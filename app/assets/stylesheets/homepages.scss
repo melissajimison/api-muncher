@@ -3,20 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
   @import url('foundation.css');
 
-.imageborder{
-  border: solid 1px black;
-}
 
 .calories{
   display: inline-block;
 }
 
-.footer{
-  bottom: 0px;
-}
-
 .index-search{
-  display: table-cell;
+  width: 80%;
   vertical-align: middle;
   height: 50px;
   border: 1px solid red;
