@@ -46,7 +46,7 @@
 
 <!-- ########## script for "back to top" button ############### -->
 <div id="back-top">
-  <a href="#" class="button"> BACK TO TOP </a>
+  <div class="button"> BACK TO TOP </div>
 </div>
 
   <script>
@@ -63,6 +63,12 @@
         } else {
           $('#back-top').fadeOut();
         }
+      });
+
+      $("#back-top").click(function (){
+          $('html, body').animate({
+              scrollTop: $("body").offset().top
+          }, 500);
       });
 
       // scroll body to 0px on click

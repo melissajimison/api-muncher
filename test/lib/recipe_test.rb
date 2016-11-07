@@ -7,5 +7,23 @@ class RecipeTest < ActionController::TestCase
     assert true
   end
 
-  
+  test "you must provide a label, an image, and a uri for a Recipe" do
+    assert_raises ArgumentError do
+      Recipe.new nil, nil, nil
+    end
+
+    assert_raises ArgumentError do
+      Recipe.new "", nil, nil
+    end
+
+    assert_raises ArgumentError do
+      Recipe.new nil, "", nil
+    end
+
+    assert_raises ArgumentError do
+      Recipe.new nil, nil, ""
+    end
+  end
+
+
 end

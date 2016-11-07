@@ -1,3 +1,5 @@
+require 'EdamamApiWrapper'
+
 class HomepagesController < ApplicationController
   layout false, only: [:index]
   helper_method :maxpage
