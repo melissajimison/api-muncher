@@ -8,10 +8,10 @@
 	- Writing tests on API
 	- Pagination
 	
-2. What do you want more practice with?
+2. What do you want more practice with?  
 	I would like to practice more on CSS and test. 
 
-3. What is something you saw done differently?
+3. What is something you saw done differently?  
 	Provided checkboxes to filter out based on dietary restriction. I did not include this feature in my project but would like to include it at some point. 
 	
 ## Learning Goals:
