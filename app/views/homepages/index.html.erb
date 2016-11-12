@@ -8,23 +8,22 @@
   </head>
   <body>
 
-    <div class="index-search">
-      <section class="content">
-        <h1 id="title">Om Nom Nom Nom Finder</h1>
-        <div class="center">
-          <div id ="search-box">
-          <%= form_tag(search_path, method: :get) do %>
-            <%= text_field_tag(:q) %>
-            <%= submit_tag "Go Nom Nom", class: "button" %>
-          <% end %>
-        </div>
-        </div>
-      </section>
-    </div>
+      <div class="index-search frontpage">
+        <section class="content">
+          <h1 class="title">Om Nom Nom Nom Finder</h1>
+          <div class="center">
+            <div id ="search-box">
+              <%= form_tag(search_path, method: :get) do %>
+                <%= text_field_tag(:q) %>
+                <%= submit_tag "Go Nom Nom", class: "button" %>
+              <% end %>
+            </div>
+          </div>
+        </section>
+      </div>
 
-
-  <footer>
-    <%= image_tag "Attibution-v1.png", :title => "Edamam Attribution", :alt => "Edamam Attribution" %>
-  </footer>
+    <footer class="the-footer">
+      <%= image_tag "Attibution-v1.png", :title => "Edamam Attribution", :alt => "Edamam Attribution" %>
+    </footer>
   </body>
 </html>
