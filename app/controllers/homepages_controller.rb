@@ -1,3 +1,5 @@
+require 'EdamamApiWrapper'
+
 class HomepagesController < ApplicationController
   layout false, only: [:index]
   helper_method :maxpage
@@ -9,13 +11,17 @@ class HomepagesController < ApplicationController
     @page = (params[:page] || 1).to_i
     @query = params[:q]
 
-    allrecipes = Edamam_Api_Wrapper.search_recipes(@query, @page)
+    allrecipes = EdamamApiWrapper.search_recipes(@query, @page)
     @your_recipes = allrecipes["hits"]
     @recipe_count = allrecipes["count"]
+
+    if @your_recipes.empty? || @recipe_count == 0
+      flash[:notice] = "No result"
+    end
   end
 
   def show
-    @recipe = Edamam_Api_Wrapper.get_recipe(params[:id])
+    @recipe = EdamamApiWrapper.get_recipe(params[:id])
   end
 
   def maxpage
