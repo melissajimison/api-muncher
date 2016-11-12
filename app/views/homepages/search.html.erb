@@ -1,13 +1,13 @@
 <!-- ######## pagination ########### -->
 
 <ul class="pagination text-center" role="navigation" aria-label="Pagination">
-  <li class="pagination-previous">
+  <li class="pagination-previous next-previous-button">
   <% if @page > 1 %>
     <%= link_to "Previous", search_path(q: @query, page: @page-1) %>
   <% end %>
   </li>
 
-  <li class="pagination-next">
+  <li class="pagination-next next-previous-button">
   <% if @page < maxpage %>
     <%= link_to "Next", search_path(q: @query, page: @page+1) %>
   <% end %>
@@ -20,7 +20,7 @@
 <% end %>
 
 
-<div class="row">
+<div class="row recipe-title">
   <h1><%= "#{@query.capitalize} Recipes" %></h1>
 </div>
 
@@ -36,7 +36,6 @@
     </div>
   <% end %>
 </div>
-
 
 
 
@@ -89,13 +88,13 @@
 <!-- ########### pagination ############### -->
 
 <ul class="pagination text-center" role="navigation" aria-label="Pagination">
-  <li class="pagination-previous">
+  <li class="pagination-previous next-previous-button">
   <% if @page > 1 %>
     <%= link_to "Previous", search_path(q: @query, page: @page-1) %>
   <% end %>
   </li>
 
-  <li class="pagination-next">
+  <li class="pagination-next next-previous-button">
   <% if @page < maxpage %>
     <%= link_to "Next", search_path(q: @query, page: @page+1) %>
   <% end %>
