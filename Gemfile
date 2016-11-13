@@ -2,11 +2,12 @@ source 'https://rubygems.org'
 
 ############# Added gems #################
 gem 'jquery-turbolinks'
-
 gem 'awesome_print'
 gem 'httparty'
-
 gem 'foundation-rails'
+gem "omniauth"
+# gem "omniauth-github"
+gem "omniauth-google-oauth2"
 ############# Added gems #################
 
 
