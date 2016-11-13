@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
-  root to: 'homepages#index'
+
+  root to: 'homepages#index', as: 'index'
+
+  get 'myrecipes/show' => 'myrecipes#show', as: 'show_my_recipes'
+
+  delete 'myrecipes/:id/destroy' => 'myrecipes#destroy', as: 'delete_my_recipes'
 
   get 'homepages/show/:id' => 'homepages#show', as: 'show'
 
   get 'homepages/search' => 'homepages#search', as: 'search'
+
+  get "/auth/:provider/callback" =>  "sessions#create"
+
+  get 'sessions/login'
+
+  get 'sessions/create'
+
+  delete 'sessions/destroy' => 'sessions#destroy'
 
   # get 'homepages/next_page' => 'homepages#next_page', as: 'next_page'
 

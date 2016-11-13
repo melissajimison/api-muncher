@@ -8,6 +8,22 @@
   </head>
   <body>
 
+    <!-- ############### Login/Logout ################## -->
+      <% if session[:user_id] == nil %>
+        <button><%= link_to("Log In with Google", "/auth/google_oauth2/callback") %></button>
+      <% else %>
+        <% if @user %>
+          <%= "Hello #{@user.name}!" %>
+        <% end %>
+        <button><%= link_to "Logout", sessions_destroy_path, method: :delete %></button>
+        <button><%= link_to "My Recipes", saved_recipes_show_path, method: :get %></button>
+      <% end %>
+    <!-- ############### Login/Logout ################## -->
+
+    <% if flash[:notice] %>
+      <%= flash[:notice] %>
+    <% end %>
+
       <div class="index-search frontpage">
         <section class="content">
           <h1 class="title">Om Nom Nom Nom Finder</h1>
