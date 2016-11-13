@@ -10,13 +10,11 @@
 
     <!-- ############### Login/Logout ################## -->
       <% if session[:user_id] == nil %>
-        <button><%= link_to("Log In with Google", "/auth/google_oauth2/callback") %></button>
+        <button><%= link_to("Log In with Google", "/auth/google_oauth2") %></button>
       <% else %>
-        <% if @user %>
-          <%= "Hello #{@user.name}!" %>
-        <% end %>
+          <p><%= "Hello, #{@user.name}!" %><p>
         <button><%= link_to "Logout", sessions_destroy_path, method: :delete %></button>
-        <button><%= link_to "My Recipes", saved_recipes_show_path, method: :get %></button>
+        <button><%= link_to "My Recipes", show_my_recipes_path, method: :get %></button>
       <% end %>
     <!-- ############### Login/Logout ################## -->
 

@@ -13,7 +13,7 @@
     <%= link_to("Log In with Google", "/auth/google_oauth2") %>
   <% else %>
     <% if @user %>
-      <%= "Hello #{@user.name}!" %>
+      <%= "Hello, #{@user.name}!" %>
     <% end %>
     <%= link_to "Logout", sessions_destroy_path, method: :delete %>
     <%= link_to "My Recipes", saved_recipes_show_path, method: :get %>

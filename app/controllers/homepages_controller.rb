@@ -3,8 +3,10 @@ require 'EdamamApiWrapper'
 class HomepagesController < ApplicationController
   layout false, only: [:index]
   helper_method :maxpage
+  skip_before_action :require_login, only: [:index, :search, :show, :maxpage]
 
   def index
+    @user = current_user
   end
 
   def search

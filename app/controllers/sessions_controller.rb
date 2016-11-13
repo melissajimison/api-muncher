@@ -1,16 +1,14 @@
 class SessionsController < ApplicationController
-  # skip_before_action :require_login, only: [:create, :login]
+  skip_before_action :require_login, only: [:create, :login]
 
   def index
-      @user = User.find(session[:user_id]) # < recalls the value set in a previous request
+  
   end
 
   def login
   end
 
   def create
-    # auth_hash = request.env['omniauth.auth']
-    # raise
     unless auth_hash
       flash[:notice] = "Login failed!"
       return redirect_to index_path
