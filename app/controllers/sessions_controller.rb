@@ -1,13 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:create, :login]
 
-  def index
-  
-  end
-
-  def login
-  end
-
   def create
     unless auth_hash
       flash[:notice] = "Login failed!"
