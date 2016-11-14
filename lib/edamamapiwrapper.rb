@@ -15,8 +15,8 @@ class EdamamApiWrapper
       page = 1
     end
 
-    from = (page-1)*10
-    to = page*10
+    from = (page-1)*12
+    to = page*12
 
     url = BASE_URL + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&q=#{keyword}" + "&from=#{from}" + "&to=#{to}"
 
