@@ -1,14 +1,10 @@
 require 'test_helper'
 
 class MyrecipesControllerTest < ActionController::TestCase
-  test "should get show" do
-    get :show
-    assert_response :success
-  end
 
   test "should get destroy" do
-    get :destroy
-    assert_response :success
+    get :show
+    assert_response :redirect
   end
 
 end
