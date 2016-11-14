@@ -50,6 +50,8 @@ group :development, :test do
   gem 'minitest-vcr'
   gem 'webmock'
   gem 'minitest-reporters'
+  gem 'simplecov', '0.11.2'
+
 end
 
 group :development do
