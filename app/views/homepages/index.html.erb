@@ -6,7 +6,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body class="frontpage">
 
     <!-- ############### Login/Logout ################## -->
       <% if session[:user_id] == nil %>
@@ -22,7 +22,7 @@
       <%= flash[:notice] %>
     <% end %>
 
-      <div class="index-search frontpage">
+      <div class="index-search">
         <section class="content">
           <h1 class="title">Om Nom Nom Nom Finder</h1>
           <div class="center">
